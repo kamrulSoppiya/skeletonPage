@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 import classes from '../assets/skeleton.module.scss';
 
 // eslint-disable-next-line react/prop-types
@@ -15,34 +15,34 @@ const Items = ({rowNum})=>{
 }
 
 // eslint-disable-next-line react/prop-types
-export const SkeletonLoader = ({url, skeletonRows})=>{
-  const [items, setItems] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+export const SkeletonLoader = ({skeletonRows})=>{
+  // const [items, setItems] = useState([]);
+  // const [isLoading, setIsLoading] = useState(true);
 
-  const fetchData = async () => {
-    try {
-      const response = await fetch(url);
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      const getData = await response.json();
-      const saveData = getData.map((item)=>(
-        item.title
-      ))
-      setIsLoading(false);
-      setItems(saveData);
-    } catch (error) {
-      console.error('Error fetching data:', error);
-    }
-  };
+  // const fetchData = async () => {
+  //   try {
+  //     const response = await fetch(url);
+  //     if (!response.ok) {
+  //       throw new Error('Network response was not ok');
+  //     }
+  //     const getData = await response.json();
+  //     const saveData = getData.map((item)=>(
+  //       item.title
+  //     ))
+  //     setIsLoading(false);
+  //     setItems(saveData);
+  //   } catch (error) {
+  //     console.error('Error fetching data:', error);
+  //   }
+  // };
 
-  console.log(items);
+  // console.log(items);
   
-  useEffect(()=>{
-    setTimeout(()=>{
-      fetchData()
-    },3000)
-  },[])
+  // useEffect(()=>{
+  //   setTimeout(()=>{
+  //     fetchData()
+  //   },4000)
+  // },[])
 
   let array = [];
   // eslint-disable-next-line react/prop-types
@@ -51,17 +51,17 @@ export const SkeletonLoader = ({url, skeletonRows})=>{
   }
   return(
     <>
-      {isLoading?(
+      {/* {isLoading?( */}
         <div style={{display: 'flex',justifyContent: 'center'}}>
           <div className={classes.container}>
            {array}
          </div>
         </div>
-      ):(
+      {/* ):(
         <ul>
           {items.map((item,index)=><li key={index}>{item}</li>)}
         </ul>
-      )}
+      )} */}
     </>
   );
 }

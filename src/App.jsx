@@ -1,10 +1,12 @@
 import {SkeletonLoader} from './features/BigSkeleton';
-// import {SmallSkeleton} from './features/SmallSkeleton';
+import { SmallSkeleton } from './features/SmallSkeleton';
+import { Mobileskeleton } from './features/mobileskeleton';
 export default function App(){
   return(
     <div>
-      {/* <SmallSkeleton url="https://jsonplaceholder.typicode.com/posts" skeletonRows={3}/> */}
-      <SkeletonLoader url ="https://jsonplaceholder.typicode.com/posts"  skeletonRows={[6,4,3,2,1,5,1]}/>
+      {/* <Mobileskeleton skeletonRows={[80, 30,50,10,20,60]} /> */}
+      <SmallSkeleton skeletonRows={3}/>
+      {/* <SkeletonLoader skeletonRows={[6,5,3]}/> */}
     </div>
   );
 }

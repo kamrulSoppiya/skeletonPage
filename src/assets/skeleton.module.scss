@@ -21,6 +21,9 @@
     align-items: center;
     margin-bottom:40px;
 }
+.items:last-child{
+  margin-bottom:0px;
+}
 .item{
     height: 8px;
     width: 100%;
@@ -32,4 +35,17 @@
     -moz-border-radius: 3px;
     -ms-border-radius: 3px;
     -o-border-radius: 3px;
+    background-image: linear-gradient(to right, #f2f2f2 0%, #d1cfcf 30%, #d9d9d9 50%, #f2f2f2 60%, #f2f2f2 100% );
+    animation: loading 2s infinite;
+    -webkit-animation: loading 2s infinite;
+    background-size: 200%;
 }
+
+@keyframes loading{
+    0% {
+      background-position: 100%;
+    }
+    100% {
+      background-position: 0%;
+    }
+  }
